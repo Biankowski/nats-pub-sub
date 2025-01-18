@@ -3,8 +3,8 @@ from typing import List, Callable, Any
 from services.message_broker import MessageBroker
 
 class NatsBroker(MessageBroker):
-    def __init__(self, client: NATS):
-        self.nc = client
+    def __init__(self):
+        self.nc = NATS()
     
     async def connect(self, servers: List[str]) -> None:
         try:
